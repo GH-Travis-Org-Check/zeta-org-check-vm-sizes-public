@@ -14,3 +14,31 @@ jobs:
       script:
         - clang -coverage -O0 hello_world.c -o hello_world
         - ./hello_world
+    - os: windows
+      language: c
+      arch: amd64
+      vm:
+        size: large
+      before_install:
+        - cmake --version
+        - git --version
+        - git --help
+        - systeminfo
+        - wmic cpu get deviceid, name, numberofcores, numberoflogicalprocessors, maxclockspeed, status
+      script:
+        - clang -coverage -O0 hello_world.c -o hello_world
+        - ./hello_world
+    - os: windows
+      language: c
+      arch: amd64
+      vm:
+        size: x-large
+      before_install:
+        - cmake --version
+        - git --version
+        - git --help
+        - systeminfo
+        - wmic cpu get deviceid, name, numberofcores, numberoflogicalprocessors, maxclockspeed, status
+      script:
+        - clang -coverage -O0 hello_world.c -o hello_world
+        - ./hello_world
