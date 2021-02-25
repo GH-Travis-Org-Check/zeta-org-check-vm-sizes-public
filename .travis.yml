@@ -370,6 +370,7 @@ jobs:
         - git --help
         - uname -a
         - lscpu
+        - sleep 1m 10s
         - free -h
         - lshw -short
       script:
